@@ -128,7 +128,7 @@ function paintMap() {
 
 sdk.getData(function (data) {
 	address = data.address || 'Text Over Image';
-	height = data.height || 300;
+	height = data.height || 240;
 	link = data.link || '';
 	color = data.color || '#000000';
 	mapsKey = data.mapsKey || 'https://image.s4.exct.net/lib/fe911573736c007d7d/m/2/f3bcb75d-176b-4412-83f3-e70dc1c591c8.png';
