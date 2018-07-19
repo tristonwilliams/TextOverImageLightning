@@ -94,6 +94,7 @@ function paintSettings () {
 	document.getElementById('text-input-id-1').value = address;
 	document.getElementById('slider-id-01').value = width;
 	document.getElementById('slider-id-02').value = height;
+	document.getElementById('text-input-id-1').value = link;
 	
 } 
 
@@ -108,7 +109,6 @@ function paintMap() {
 	address = document.getElementById('text-input-id-1').value;
 	width = document.getElementById('slider-id-01').value;
 	height = document.getElementById('slider-id-02').value;
-	
 	link = document.getElementById('text-input-id-2').value;
 	if (!address) {
 		return;
@@ -121,20 +121,18 @@ function paintMap() {
 		address: address,
 		width: width,
 		height: height,
-		
 		link: link,
 		mapsKey: mapsKey
 	});
-	//localStorage.setItem('googlemapsapikeyforblock', mapsKey);
+
 }
 
 sdk.getData(function (data) {
 	address = data.address || '';
 	width = data.width || 600;
 	height = data.height || 400;
-	
 	link = data.link || '';
-	mapsKey = data.mapsKey || '';//localStorage.getItem('googlemapsapikeyforblock');
+	mapsKey = data.mapsKey || '';
 	paintSettings();
 	paintSliderValues();
 	paintMap();
