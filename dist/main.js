@@ -109,7 +109,7 @@ function createblock() {
 	height = document.getElementById('slider-id-02').value;
 	color = document.getElementById('drop-id-0').value
 	link = document.getElementById('text-input-id-2').value;
-	if (!address) {
+	if (!text) {
 		return;
 	}
 	var url = "<table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td style='background-repeat:no-repeat;background-position: center;' background='" + imgurl + "' bgcolor='#ffffff' width='600' height='" + height + "' valign='top'> <!--[if gte mso 9]> <v:rect xmlns:v='urn:schemas-microsoft-com:vml' fill='true' stroke='false' style='background-repeat:no-repeat; width:600px;height:" + height + "px;'> <v:fill type='tile' src='" + imgurl + "' color='#ffffff' /> <v:textbox inset='0,0,0,0'> <![endif]--> <div> <table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td width='30' align='left' valign='top' style='font-size: 0%;' class='mobile-hidden'></td> <td align='left' valign='top'><table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td align='left' valign='top' style='padding-top: 95px;color:" + color + "; padding-left: 100px; padding-right: 100px; font-size: 48px;line-height: normal;'><a style='color: " + color + ";font-size: 48px;line-height: normal;Text-decoration: none;' href='" + link + "'><center>" + text + "</center></a></td> </tr> </tbody> </table></td> <td width='30' align='left' valign='top' style='font-size: 0%;'></td> </tr> </tbody> </table> </div> <!--[if gte mso 9]> </v:textbox> </v:rect> <![endif]--> </td> </tr> </tbody> </table>";
