@@ -28,13 +28,13 @@
 			<div class="slds-form-element">
 				<label class="slds-form-element__label" for="text-input-id-0">Image URL</label>
 				<div class="slds-form-element__control">
-					<input type="text" id="text-input-id-0" class="slds-input" placeholder="Your Google Maps API key" />
+					<input type="text" id="text-input-id-0" class="slds-input" placeholder="http://image.s4.exct.net/lib/fe8f15737c62077a76/m/1/a9836fc9-54dc-434a-a09f-2b2ca88ce146.png" />
 				</div>
 			</div>
 			<div class="slds-form-element">
 				<label class="slds-form-element__label" for="text-input-id-1">Text</label>
 				<div class="slds-form-element__control">
-					<input type="text" id="text-input-id-1" class="slds-input" placeholder="e.g. Salesforce Tower Indianapolis" />
+					<input type="text" id="text-input-id-1" class="slds-input" placeholder="Text Over Image" />
 				</div>
 			</div>
 			<div class="slds-form-element">
@@ -63,17 +63,28 @@
 					</div>
 				</div>
 			</div>
-			<div class="slds-form-element">
+			<div style="padding-bottom:10px" class="slds-form-element">
 				<label class="slds-form-element__label" for="slider-id-03">
 					<span class="slds-slider-label">
-						<span class="slds-slider-label__label">Zoom Level</span>
+						<span class="slds-slider-label__label">Text Color</span>
 					</span>
 				</label>
 				<div class="slds-form-element__control">
-					<div class="slds-slider">
-						<input type="range" id="slider-id-03" class="slds-slider__range" value="10" min="1" max="20" />
-						<span class="slds-slider__value"id="slider-id-03-val" aria-hidden="true">10</span>
-					</div>
+					
+						
+				  <div class="col-md-4">
+                     <div id="standalone-container">
+                        <select id="drop-id-0" name="Color" class="slds-input">
+                           <option value="#000000">Black</option>
+                           <option value="#FFFFFF">White</option>
+                           <option value="#FF0000">Red</option>
+                           <option value="#0000FF">Blue</option>
+                           <option value="#048500">Green</option>
+                        </select>
+                     </div>
+                  </div>
+						
+					
 				</div>
 			</div>
 			<div class="slds-form-element">
@@ -84,7 +95,7 @@
 			</div>
 		</div>
   </div>
-  <footer class="slds-card__footer">For use in Salesforce Marketing Cloud block SDK demos only</footer>
+  <footer class="slds-card__footer">For use in Salesforce Marketing Cloud block SDK</footer>
 </article>
 		
 		<script src="./main.js"></script>
