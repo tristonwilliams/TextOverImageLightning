@@ -94,7 +94,7 @@ function paintSettings () {
 	document.getElementById('text-input-id-1').value = address;
 	document.getElementById('slider-id-01').value = width;
 	document.getElementById('slider-id-02').value = height;
-	document.getElementById('text-input-id-1').value = link;
+	document.getElementById('text-input-id-2').value = link;
 	
 } 
 
