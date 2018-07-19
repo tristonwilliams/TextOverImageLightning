@@ -72,7 +72,7 @@ __webpack_require__(1);
 var SDK = __webpack_require__(19);
 var sdk = new SDK();
 
-var address, height, link, color, imgurl;
+var text, height, link, color, imgurl;
 
 function debounce (func, wait, immediate) {
 	var timeout;
@@ -89,35 +89,35 @@ function debounce (func, wait, immediate) {
 	};
 }
 
-function paintSettings () {
+function createSettings () {
 	document.getElementById('text-input-id-0').value = imgurl;
-	document.getElementById('text-input-id-1').value = address;
+	document.getElementById('text-input-id-1').value = text;
 	document.getElementById('slider-id-02').value = height;
 	document.getElementById('text-input-id-2').value = link;
 	document.getElementById('drop-id-0').value = color;
 } 
 
-function paintSliderValues () {
+function createSliderValues () {
 	
 	document.getElementById('slider-id-02-val').innerHTML = document.getElementById('slider-id-02').value;
 	
 }
 
-function paintMap() {
+function createblock() {
 	imgurl = document.getElementById('text-input-id-0').value;
-	address = document.getElementById('text-input-id-1').value;
+	text = document.getElementById('text-input-id-1').value;
 	height = document.getElementById('slider-id-02').value;
 	color = document.getElementById('drop-id-0').value
 	link = document.getElementById('text-input-id-2').value;
 	if (!address) {
 		return;
 	}
-	var url = "<table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td style='background-repeat:no-repeat;background-position: center;' background='" + imgurl + "' bgcolor='#ffffff' width='600' height='" + height + "' valign='top'> <!--[if gte mso 9]> <v:rect xmlns:v='urn:schemas-microsoft-com:vml' fill='true' stroke='false' style='background-repeat:no-repeat; width:600px;height:" + height + "px;'> <v:fill type='tile' src='" + imgurl + "' color='#ffffff' /> <v:textbox inset='0,0,0,0'> <![endif]--> <div> <table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td width='30' align='left' valign='top' style='font-size: 0%;' class='mobile-hidden'></td> <td align='left' valign='top'><table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td align='left' valign='top' style='padding-top: 95px;color:" + color + "; padding-left: 100px; padding-right: 100px; font-size: 48px;line-height: normal;'><a style='color: " + color + ";font-size: 48px;line-height: normal;Text-decoration: none;' href='" + link + "'><center>" + address + "</center></a></td> </tr> </tbody> </table></td> <td width='30' align='left' valign='top' style='font-size: 0%;'></td> </tr> </tbody> </table> </div> <!--[if gte mso 9]> </v:textbox> </v:rect> <![endif]--> </td> </tr> </tbody> </table>";
+	var url = "<table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td style='background-repeat:no-repeat;background-position: center;' background='" + imgurl + "' bgcolor='#ffffff' width='600' height='" + height + "' valign='top'> <!--[if gte mso 9]> <v:rect xmlns:v='urn:schemas-microsoft-com:vml' fill='true' stroke='false' style='background-repeat:no-repeat; width:600px;height:" + height + "px;'> <v:fill type='tile' src='" + imgurl + "' color='#ffffff' /> <v:textbox inset='0,0,0,0'> <![endif]--> <div> <table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td width='30' align='left' valign='top' style='font-size: 0%;' class='mobile-hidden'></td> <td align='left' valign='top'><table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td align='left' valign='top' style='padding-top: 95px;color:" + color + "; padding-left: 100px; padding-right: 100px; font-size: 48px;line-height: normal;'><a style='color: " + color + ";font-size: 48px;line-height: normal;Text-decoration: none;' href='" + link + "'><center>" + text + "</center></a></td> </tr> </tbody> </table></td> <td width='30' align='left' valign='top' style='font-size: 0%;'></td> </tr> </tbody> </table> </div> <!--[if gte mso 9]> </v:textbox> </v:rect> <![endif]--> </td> </tr> </tbody> </table>";
 	
 	
 	sdk.setContent(url);
 	sdk.setData({
-		address: address,
+		text: text,
 		height: height,
 		color: color,
 		link: link,
@@ -127,19 +127,19 @@ function paintMap() {
 }
 
 sdk.getData(function (data) {
-	address = data.address || 'Text Over Image';
+	text = data.text || 'Text Over Image';
 	height = data.height || 240;
 	link = data.link || '';
 	color = data.color || '#000000';
 	imgurl = data.imgurl || 'https://image.s4.exct.net/lib/fe911573736c007d7d/m/2/f3bcb75d-176b-4412-83f3-e70dc1c591c8.png';
-	paintSettings();
-	paintSliderValues();
-	paintMap();
+	createSettings();
+	createSliderValues();
+	createblock();
 });
 
 document.getElementById('workspace').addEventListener("input", function () {
-	debounce(paintMap, 500)();
-	paintSliderValues();
+	debounce(createblock, 500)();
+	createSliderValues();
 });
 
 
