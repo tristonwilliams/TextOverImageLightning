@@ -72,7 +72,7 @@ __webpack_require__(1);
 var SDK = __webpack_require__(19);
 var sdk = new SDK();
 
-var address, width, height, zoom, link, mapsKey;
+var address, width, height, link, mapsKey;
 
 function debounce (func, wait, immediate) {
 	var timeout;
@@ -94,13 +94,13 @@ function paintSettings () {
 	document.getElementById('text-input-id-1').value = address;
 	document.getElementById('slider-id-01').value = width;
 	document.getElementById('slider-id-02').value = height;
-	document.getElementById('slider-id-03').value = zoom;
+	
 } 
 
 function paintSliderValues () {
 	document.getElementById('slider-id-01-val').innerHTML = document.getElementById('slider-id-01').value;
 	document.getElementById('slider-id-02-val').innerHTML = document.getElementById('slider-id-02').value;
-	document.getElementById('slider-id-03-val').innerHTML = document.getElementById('slider-id-03').value;
+	
 }
 
 function paintMap() {
@@ -108,12 +108,12 @@ function paintMap() {
 	address = document.getElementById('text-input-id-1').value;
 	width = document.getElementById('slider-id-01').value;
 	height = document.getElementById('slider-id-02').value;
-	zoom = document.getElementById('slider-id-03').value;
+	
 	link = document.getElementById('text-input-id-2').value;
 	if (!address) {
 		return;
 	}
-	var url = "<table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td style='background-repeat:no-repeat;' background='" + mapsKey + "' bgcolor='#ffffff' width='" + width + "' height='" + height + "' valign='top'> <!--[if gte mso 9]> <v:rect xmlns:v='urn:schemas-microsoft-com:vml' fill='true' stroke='false' style='background-repeat:no-repeat; width:" + width + "px;height:" + height + "px;'> <v:fill type='tile' src='" + mapsKey + "' color='#ffffff' /> <v:textbox inset='0,0,0,0'> <![endif]--> <div> <table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td width='30' align='left' valign='top' style='font-size: 0%;' class='mobile-hidden'></td> <td align='left' valign='top'><table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td align='left' valign='top' style='padding-top: 95px;color:#000000; padding-left: 100px; padding-right: 100px; font-size: 48px;'><a style='color: #000000;font-size: 48px;Text-decoration: none;' href='" + link + "'><center>" + address + "</center></a></td> </tr> </tbody> </table></td> <td width='30' align='left' valign='top' style='font-size: 0%;'></td> </tr> </tbody> </table> </div> <!--[if gte mso 9]> </v:textbox> </v:rect> <![endif]--> </td> </tr> </tbody> </table>";
+	var url = "<table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td style='background-repeat:no-repeat;background-position: center;' background='" + mapsKey + "' bgcolor='#ffffff' width='" + width + "' height='" + height + "' valign='top'> <!--[if gte mso 9]> <v:rect xmlns:v='urn:schemas-microsoft-com:vml' fill='true' stroke='false' style='background-repeat:no-repeat; width:" + width + "px;height:" + height + "px;'> <v:fill type='tile' src='" + mapsKey + "' color='#ffffff' /> <v:textbox inset='0,0,0,0'> <![endif]--> <div> <table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td width='30' align='left' valign='top' style='font-size: 0%;' class='mobile-hidden'></td> <td align='left' valign='top'><table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td align='left' valign='top' style='padding-top: 95px;color:#000000; padding-left: 100px; padding-right: 100px; font-size: 48px;'><a style='color: #000000;font-size: 48px;Text-decoration: none;' href='" + link + "'><center>" + address + "</center></a></td> </tr> </tbody> </table></td> <td width='30' align='left' valign='top' style='font-size: 0%;'></td> </tr> </tbody> </table> </div> <!--[if gte mso 9]> </v:textbox> </v:rect> <![endif]--> </td> </tr> </tbody> </table>";
 	
 	
 	sdk.setContent(url);
@@ -121,7 +121,7 @@ function paintMap() {
 		address: address,
 		width: width,
 		height: height,
-		zoom: zoom,
+		
 		link: link,
 		mapsKey: mapsKey
 	});
@@ -132,7 +132,7 @@ sdk.getData(function (data) {
 	address = data.address || '';
 	width = data.width || 400;
 	height = data.height || 300;
-	zoom = data.zoom || 15;
+	
 	link = data.link || '';
 	mapsKey = data.mapsKey || '';//localStorage.getItem('googlemapsapikeyforblock');
 	paintSettings();
