@@ -130,7 +130,7 @@ sdk.getData(function (data) {
 	address = data.address || '';
 	height = data.height || 400;
 	link = data.link || '';
-	color = data.color || 'Black';
+	color = data.color || '#000000';
 	mapsKey = data.mapsKey || '';
 	paintSettings();
 	paintSliderValues();
