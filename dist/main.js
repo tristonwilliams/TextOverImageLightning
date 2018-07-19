@@ -72,7 +72,7 @@ __webpack_require__(1);
 var SDK = __webpack_require__(19);
 var sdk = new SDK();
 
-var address, width, height, link, mapsKey;
+var address, width, height, link, color, mapsKey;
 
 function debounce (func, wait, immediate) {
 	var timeout;
@@ -95,7 +95,7 @@ function paintSettings () {
 	document.getElementById('slider-id-01').value = width;
 	document.getElementById('slider-id-02').value = height;
 	document.getElementById('text-input-id-2').value = link;
-	
+	document.getElementById('drop-id-0').value = color;
 } 
 
 function paintSliderValues () {
@@ -109,6 +109,7 @@ function paintMap() {
 	address = document.getElementById('text-input-id-1').value;
 	width = document.getElementById('slider-id-01').value;
 	height = document.getElementById('slider-id-02').value;
+	color = document.getElementById('drop-id-0').value
 	link = document.getElementById('text-input-id-2').value;
 	if (!address) {
 		return;
@@ -121,6 +122,7 @@ function paintMap() {
 		address: address,
 		width: width,
 		height: height,
+		color: color,
 		link: link,
 		mapsKey: mapsKey
 	});
@@ -132,6 +134,7 @@ sdk.getData(function (data) {
 	width = data.width || 600;
 	height = data.height || 400;
 	link = data.link || '';
+	color = data.color || '';
 	mapsKey = data.mapsKey || '';
 	paintSettings();
 	paintSliderValues();
