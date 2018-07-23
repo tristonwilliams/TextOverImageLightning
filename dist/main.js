@@ -141,7 +141,7 @@ document.getElementById('workspace').addEventListener("input", function () {
 	debounce(createblock, 500)();
 	createSliderValues();
 });
-	document.getElementById('workspace').addEventListener("click", function () {
+	document.getElementById('mixed').addEventListener("click", function () {
 	debounce(createblock, 500)();
 	createSliderValues();
 });
