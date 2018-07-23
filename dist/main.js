@@ -112,7 +112,7 @@ function createblock() {
 	if (!text) {
 		return;
 	}
-	var url = "<table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td style='background-repeat:no-repeat;background-position: center;' background='" + imgurl + "' bgcolor='#ffffff' width='600' height='" + height + "' valign='top'> <!--[if gte mso 9]> <v:rect xmlns:v='urn:schemas-microsoft-com:vml' fill='true' stroke='false' style='background-repeat:no-repeat; width:600px;height:" + height + "px;'> <v:fill type='tile' src='" + imgurl + "' color='#ffffff' /> <v:textbox inset='0,0,0,0'> <![endif]--> <div> <table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr><td align='center' valign='top'><table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td align='left' valign='top' style='padding-top: 110px;color:#" + color + "; padding-left: 70px; padding-right: 70px; font-size: 48px;line-height: normal;'><a style='color: " + color + ";font-size: 48px;line-height: normal;Text-decoration: none;' href='" + link + "'><center>" + text + "</center></a></td> </tr> </tbody> </table></td> </tr> </tbody> </table> </div> <!--[if gte mso 9]> </v:textbox> </v:rect> <![endif]--> </td> </tr> </tbody> </table>";
+	var url = "<table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td style='background-repeat:no-repeat;background-position: center;' background='" + imgurl + "' bgcolor='#ffffff' width='600' height='" + height + "' valign='top'> <!--[if gte mso 9]> <v:rect xmlns:v='urn:schemas-microsoft-com:vml' fill='true' stroke='false' style='background-repeat:no-repeat; width:600px;height:" + height + "px;'> <v:fill type='tile' src='" + imgurl + "' color='#ffffff' /> <v:textbox inset='0,0,0,0'> <![endif]--> <div> <table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr><td align='center' valign='top'><table width='100%' border='0' cellspacing='0' cellpadding='0'> <tbody> <tr> <td align='left' valign='top' style='padding-top: 110px;color:#" + color + "; padding-left: 70px; padding-right: 70px; font-size: 48px;line-height: normal;'><a style='color:#" + color + ";font-size: 48px;line-height: normal;Text-decoration: none;' href='" + link + "'><center>" + text + "</center></a></td> </tr> </tbody> </table></td> </tr> </tbody> </table> </div> <!--[if gte mso 9]> </v:textbox> </v:rect> <![endif]--> </td> </tr> </tbody> </table>";
 	
 	
 	sdk.setContent(url);
@@ -138,6 +138,10 @@ sdk.getData(function (data) {
 });
 
 document.getElementById('workspace').addEventListener("input", function () {
+	debounce(createblock, 500)();
+	createSliderValues();
+});
+	document.getElementById('drop-id-0').addEventListener("click", function () {
 	debounce(createblock, 500)();
 	createSliderValues();
 });
