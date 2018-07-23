@@ -130,7 +130,7 @@ sdk.getData(function (data) {
 	text = data.text || 'Text Over Image';
 	height = data.height || 240;
 	link = data.link || '';
-	color = data.color || '#000000';
+	color = data.color || '000000';
 	imgurl = data.imgurl || 'https://image.s4.exct.net/lib/fe911573736c007d7d/m/2/f3bcb75d-176b-4412-83f3-e70dc1c591c8.png';
 	createSettings();
 	createSliderValues();
@@ -141,7 +141,7 @@ document.getElementById('workspace').addEventListener("input", function () {
 	debounce(createblock, 500)();
 	createSliderValues();
 });
-	document.getElementById('drop-id-0').addEventListener("onchange", function () {
+	document.getElementById('drop-id-0').addEventListener("pointerlockchange", function () {
 	debounce(createblock, 500)();
 	createSliderValues();
 });
