@@ -131,7 +131,7 @@ sdk.getData(function (data) {
 	height = data.height || 240;
 	link = data.link || '';
 	color = data.color || '';
-	imgurl = data.imgurl || 'https://image.s4.exct.net/lib/fe911573736c007d7d/m/2/f3bcb75d-176b-4412-83f3-e70dc1c591c8.png';
+	imgurl = data.imgurl || 'https://image.s4.sfmc-content.com/lib/fe8f15737c62077a76/m/1/sftrailhead.png';
 	createSettings();
 	createSliderValues();
 	createblock();
