@@ -128,7 +128,7 @@ function createblock() {
 
 sdk.getData(function (data) {
 	text = data.text || 'Text Over Image';
-	height = data.height || 240;
+	height = data.height || 400;
 	link = data.link || '';
 	color = data.color || '';
 	imgurl = data.imgurl || 'https://image.s4.sfmc-content.com/lib/fe8f15737c62077a76/m/1/sftrailhead.png';
